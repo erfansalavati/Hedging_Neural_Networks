@@ -16,7 +16,7 @@ import setup
 
 if sys.argv[1] == 'tune':
     print('Loading Hyper Tuning data sets!\n')
-    data_dir = setup.DATA_DIR + f'CleanData/CONFIG={setup.CONFIG}/TuneHypers/'
+    data_dir = setup.DATA_DIR + f'CleanData/CONFIG={setup.CONFIG}/'
     mc_dir = data_dir + 'MC/'
 
 
