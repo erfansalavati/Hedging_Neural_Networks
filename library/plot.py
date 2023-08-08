@@ -84,9 +84,12 @@ class Painter(cm.PnlLoader):
         """
         df_coef = pd.read_csv(f'{self.dirs_dict[model_name]}coef.csv', header=[0, 1])
         df_std = pd.read_csv(f'{self.dirs_dict[model_name]}std.csv', header=[0, 1])
+        colors = ['b','r']
+        c = 0
         for n, g in groups.items():
+            c = 1-c
             plt.errorbar(df_coef.index + 1, df_coef.loc[:, (g, feature)], fmt='none',
-                yerr=2*df_std.loc[:, (g, feature)], label=n, capsize=5)
+                yerr=2*df_std.loc[:, (g, feature)], ecolor=colors[c], label=n, capsize=5)
         plt.legend(frameon=False)
 
     
